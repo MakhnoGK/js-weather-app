@@ -11,7 +11,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'}),
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
   ],
 
   module: {
@@ -31,6 +31,28 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+
+      /*
+       * Loading image files in specific directories
+       */
+      {
+        test: /\.(png|gif|svg|jpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name(resourcePath, resourceQuery) {
+            if (process.env.NODE_ENV === 'development') {
+              return "[path][name].[ext]";
+            }
+
+            return '[contenthash].[ext]';
+          },
+          outputPath: 'images',
+        },
+      },
+      {
+        test: /\.(html)$/i,
+        use: ['html-loader']
+      }
     ],
   },
 
