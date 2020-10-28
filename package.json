@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "webpack --env.production -p"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
