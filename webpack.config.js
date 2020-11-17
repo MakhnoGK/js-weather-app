@@ -1,11 +1,12 @@
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const settings = (env) => {
   return {
     entry: {
-      main: './src/app.js'
+      main: './src/js/app.js'
     },
 
     devtool: 'inline-source-map',
@@ -17,7 +18,8 @@ const settings = (env) => {
       new HtmlWebpackPlugin({
         template: './src/index.html',
         minify: false
-      })
+      }),
+      new MiniCssExtractPlugin()
     ],
 
     module: {
@@ -27,7 +29,7 @@ const settings = (env) => {
          * */
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
         },
 
         /*
@@ -35,7 +37,7 @@ const settings = (env) => {
          * */
         {
           test: /\.s[ac]ss$/i,
-          use: ['style-loader', 'css-loader', 'sass-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
         },
 
         /*
@@ -45,7 +47,7 @@ const settings = (env) => {
           test: /\.(png|gif|svg|jpe?g)$/i,
           loader: 'file-loader',
           options: {
-            name (resourcePath, resourceQuery) {
+            name (_, __) {
               if (env.production) {
                 return '[name].[ext]'
               }
@@ -63,7 +65,7 @@ const settings = (env) => {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           loader: 'file-loader',
           options: {
-            name (resourcePath, resourceQuery) {
+            name (_, __) {
               if (env.production) {
                 return '[name].[ext]'
               }
@@ -85,6 +87,13 @@ const settings = (env) => {
           }
         }
       ]
+    },
+
+    optimization: {
+      runtimeChunk: true,
+      splitChunks: {
+        chunks: 'all'
+      }
     },
 
     output: {
