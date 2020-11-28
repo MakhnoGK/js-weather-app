@@ -1,11 +1,17 @@
 {
-  "name": "webpack-workflow",
+  "name": "Weather App",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --env.production=false --open",
     "build": "webpack --env.production -p"
   },
+  "author": "Hryhorii Khyzhniakov",
   "dependencies": {
+    "icons": "^1.0.0",
+    "leaflet": "^1.7.1",
+    "material-design": "^0.0.1",
+    "material-design-icons": "^3.0.1",
+    "mustache": "^4.0.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

@@ -1,0 +1,58 @@
+.button {
+  cursor: pointer;
+  color: $primary;
+  background: none;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 0 0 2px $primary;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $accent;
+    text-shadow: 0 0 2px $accent;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px dotted currentColor;
+  }
+}
+
+.button.filled {
+  color: $white;
+  background-color: $primary;
+
+  &:hover {
+    background-color: $accent;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: rgba($primary, .4);
+    transform: none;
+    text-shadow: none;
+  }
+}
+
+#spinner {
+  display: none;
+  animation: spinner 1s running linear infinite;
+}
+
+.notification {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  padding: 10px;
+  display: none;
+
+  &--error {
+    color: rgb(138, 9, 9);
+    background-color: rgb(253, 199, 199);
+    border: 1px solid rgb(226, 133, 133);
+  }
+}
+
+@keyframes spinner {
+  from { transform: rotateZ(0deg); }
+  to { transform: rotateZ(360deg); }
+}

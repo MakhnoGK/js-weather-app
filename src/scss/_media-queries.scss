@@ -1,0 +1,29 @@
+@media screen and (max-width: 320px) {
+  .weather-container {
+    font-size: 0.8rem;
+  }
+
+  .weather-card-header__icon img {
+    height: 100px;
+  }
+
+  .info__temperature {
+    padding: 0;
+  }
+
+  .info__temperature--average {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .city {
+    padding: 10px 7px;
+    min-height: 55px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .weather-container {
+    min-width: 25%;
+  }
+}

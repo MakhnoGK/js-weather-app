@@ -1,0 +1,21 @@
+.info__temperature {
+  display: flex;
+  align-items: stretch;
+  padding: 1.25rem 0;
+  color: $white;
+  text-shadow: 0 0 5px $gray;
+
+  &-additional {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    font-size: 1.2rem;
+  }
+
+  &--average {
+    font: 6rem PoppinsLight;
+    line-height: 5rem;
+    margin: 0;
+  }
+}

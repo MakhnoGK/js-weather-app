@@ -7,14 +7,77 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Workflow</title>
+    <title>Weather</title>
   </head>
 
   <body>
-    <div class="hero">
-      <img src="assets/images/webpack-logo.png" id="logo" />
-      <h1>Webpack workflow</h1>
-      <p>A simple webpack boilerplate for HTML/CSS development.</p>
+    <noscript>You need JavaScript enabled to use this app</noscript>
+    <div class="weather-container">
+      <div class="weather-card">
+        <!-- Header -->
+        <header class="weather-card-header">
+          <div class="weather-card-header__icon">
+            <figure>
+              <img
+                src="#"
+                alt="Weather icon"
+                data-wIcon
+              />
+            </figure>
+          </div>
+          <div class="weather-card-header__info">
+            <!-- Temperature block -->
+            <div class="info__temperature">
+              <h1 class="info__temperature--average" data-temp>--</h1>
+            </div>
+            <!-- / temperature block -->
+
+            <!-- Additional weather -->
+            <table class="info__additional">
+              <tbody>
+                <tr>
+                  <td>Humidity</td>
+                  <td data-humidity>--</td>
+                </tr>
+                <tr>
+                  <td>Wind Speed</td>
+                  <td data-wind>--</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- / Additional weather -->
+          </div>
+        </header>
+        <!-- / Header -->
+
+        <footer class="city">
+          <div class="city__info">
+            <strong data-city>Search for the city...</strong>
+            <span data-wStatus>--</span>
+          </div>
+
+          <div class="city__search">
+            <button class="button" id="btn-show-search-form">
+              <i class="material-icons">search</i>
+            </button>
+            <form id="form-search" class="search hidden">
+              <input
+                type="text"
+                name="city-name"
+                id="city-name"
+                placeholder="Enter city name"
+              />
+              <button class="button filled disabled" id="btn-submit-search" type="submit">
+                <i id="check" class="material-icons">check</i>
+              </button>
+            </form>
+          </div>
+        </footer>
+      </div> <!-- / .weather-card-->
+
+      <div id="search-error" class="notification notification--error">
+        <div class="notification__text">Error</div>
+      </div> <!-- / .notification-->
     </div>
   </body>
 </html>

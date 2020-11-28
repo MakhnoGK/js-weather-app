@@ -1,0 +1,29 @@
+.weather-card {
+  width: 100%;
+  box-shadow: 0 3px 20px 0 $light-gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-card-header {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__info {
+    flex-grow: 2;
+    background: linear-gradient(to bottom, $primary, $primary-darken);
+    padding: 0 20px;
+  }
+
+  &__icon {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-darken;
+
+    img {
+      height: 200px;
+    }
+  }
+}

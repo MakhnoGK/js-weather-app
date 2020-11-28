@@ -1,0 +1,47 @@
+.city {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px 15px;
+  min-height: 90px;
+
+  &__info {
+    color: $light-gray;
+    flex-grow: 1;
+
+    strong {
+      color: $gray;
+      display: block;
+    }
+  }
+
+  &__search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    form {
+      flex-grow: 1;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  flex-grow: 1;
+
+  input {
+    border: none;
+    border-bottom: 1px solid $gray;
+    padding: 10px;
+    flex-grow: 1;
+    margin-right: 10px;
+    color: $gray;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

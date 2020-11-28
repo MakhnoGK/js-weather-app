@@ -11,7 +11,12 @@ const settings = (env) => {
 
     devtool: 'inline-source-map',
     devServer: {
-      contentBase: './dist'
+      contentBase: './dist',
+      host: '0.0.0.0',
+      port: 8080,
+      disableHostCheck: true,
+      open: true,
+      openPage: 'http://localhost:8080'
     },
 
     plugins: [
